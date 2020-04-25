@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+div {
+	border: solid 3px navy;
+	background-color: #ff00ff;
+	
+	font-size: 16pt;	
+}
+
