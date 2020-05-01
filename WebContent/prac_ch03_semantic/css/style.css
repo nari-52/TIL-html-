@@ -1,1 +1,96 @@
 @charset "UTF-8";
+
+/* 여백 및 기본적인 폰트를 설정하겠다 */
+body {
+	margin: 0; /* 상우하좌 */
+	padding: 0;
+	font_family: Arial, "MS Trebuchet", sans-serif;	
+}
+
+div#wrap {
+	/* border: solid 1px navy;  */
+	width: 960px; /* 모두 이 넓이를 기준으로 사용된다 */
+	margin: 0 auto;
+}
+
+/* 네비게이션의 리스트의 점(●/disc) 제거하기  */
+header#page_header ul, footer#page_footer ul{
+	/* border: solid 1px red; */
+	list-style-type: none; /* 기호를 안보이게 함 */
+}
+
+header#page_header li, footer#page_footer li {
+	/* border: solid 1px yellow; */
+	display: inline; /* display 방식을 가로형태로 함	 */
+	margin-right: 20px; /* 목록 간격 조정 */
+	padding: 0;
+}
+
+div#line {
+	border-bottom: solid 2px blue;
+	margin-bottom: 30px;
+}
+
+/* a 태그에 밑줄 제거하기 */
+a {
+	text-decoration: none;
+}
+
+/* a 태그에 방문하기 전의 링크 컬러 */
+a:link {
+	color: blue;
+}
+
+/* a 태그에 방문 후 링크 */
+a:visited {
+	color: blue;
+}
+
+/* a 태그에 마우스포인터를 올려 놓았을때  */
+header#page_header a:hover {
+	background-color: red;
+	color: yellow;
+	font-weight: bolder;
+}
+
+section#posts {
+	/* border: solid 1px blue; */
+	float: left; /* 가로방향으로 보여주겠다. */
+	width: 70%;
+}
+
+section#posts aside {
+	/* border: solid 1px orange; */
+	float: right; /* 가로방향 (오른쪽 정렬) */
+	width: 34%;
+	margin: 0 20px;
+	color: #b30059;
+	font-size: 20px;
+	font-weight: bolder;
+	line-height: 40px;
+
+}
+
+section#sidebar {
+	/* border: solid 1px red; */
+	border-left: solid 1px gray;
+	float: right; /* 가로방향으로 보여주겠다. */
+	width: 27%;
+	padding-left: 10px;
+	height: 430px;
+}
+
+footer{
+	/* border: solid 1px yellow; */
+	clear: both;
+	text-align: center;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+
+
+
+
