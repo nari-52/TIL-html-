@@ -2,9 +2,108 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>form에 대해서 알아봅니다.</title>
+
+<style type="text/css">
+
+
+</style>
+
 </head>
 <body>
+
+	<div id="container">
+		
+		<!-- form 태그에서 값을 전송 시 name 이지 id가 아니다  -->
+		<form name="registerForm" action="register.do">
+			
+			<!-- fieldset 태그는 폼을 묶어주는 역할이다. -->
+			<fieldset>
+				
+				<!-- legend 태그는 fieldset 에 대한 제목을 지정하는 것이다.  -->
+				<legend>프로젝트 정보</legend>
+				
+				<ul>
+					<li>
+						<label for="prjname">프로젝트명</label>
+						<input type="text" id="prjname" size="20" maxlength="30" autofocus required placeholder="예: 인사관리프로젝트"/>
+						<!-- type 문자입력ㅊ창 / size 문자입력창 크기(길이) / maxlength 최대입력가능글자수
+							 autofocus : 페이지로드시 자동 포커스 지정
+							 required : 입력필수지정, not null ("이 입력란을 입력하세요") 
+							 placehoder : 작성 전 예시어
+							 id = "prjname" : for="prjname"하면 label을 클릭해도 포커스가 잡힌다. -->
+					</li>
+					
+					<li>
+						<label for="priority">중요도</label>
+						<input type="range" id="priority" min="0" max="10" value="5" step="1" />
+						<!-- range : 슬라이드 막대로 표시하는 숫자 필드 -->
+					</li>
+					
+					<li>
+						<label for="estimatedtime">완료예상시간</label>
+						<input type="number" id="estimatedtime" min="1" max="1000" value="10" step="10" />
+						<!-- number : 숫자필드 상하로 표현, 직접 입력 가능 -->
+					</li>
+					
+					<li>
+						<label for="startdate">시작날짜</label>
+						<input type="date" id="startdate" />
+						<!-- date : 날짜필드 (달력 선택 or 직접 입력 가능) -->
+					</li>
+					
+					<li>
+						<label for="month">월</label>
+						<input type="month" id="month" />
+						<!-- month : 월 단위 날짜필드, 년도-월 (달력 선택 or 직접 입력 가능) -->
+					</li>
+					
+					<li>
+						<label for="week">주</label>
+						<input type="week" id="week" />
+						<!-- week : 주 단위 날짜필드, 년도-주 (달력 선택 or 직접 입력 가능) -->
+					</li>
+					
+					<li>
+						<label for="starttime">시작시간</label>
+						<input type="time" id="starttime" />
+						<!-- time : 시간필드 -->
+					</li>
+					
+					<li>
+						<label for="email">이메일</label>
+						<input type="email" id="email" />
+						<!-- email : 이메일 필드 -->
+					</li>
+				
+					<li>
+						<label for="url">URL</label>
+						<input type="url" id="url" />
+						<!-- url : URL 필드 -->
+					</li>
+					
+					<li>
+						<label for="search">검색</label>
+						<input type="search" id="search" />
+						<!-- search : search 필드 -->
+					</li>
+					
+					<li>
+						<label for="projectcolor">프로젝트 색상</label>
+						<input type="color" id="projectcolor" />
+						<!-- color : 색상지정 필드 -->
+						<!-- 10진수를 16진수로 바꾸어 #을 붙여준다 ==> #8414B4 -->
+					</li>
+					
+					<li>
+						<input type="submit" value="전송" />
+						<input type="reset" value="전송" />
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+	
+	</div>
 
 </body>
 </html>
