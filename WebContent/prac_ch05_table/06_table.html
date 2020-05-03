@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 만들기6 [열병합, 행병합, :first-child, :last-child, ~, +]</title>
+
+<style type="text/css">
+
+	table, th, td {
+		border: solid 1px #fcb558;
+		border-collapse: collapse; /* border 와 border 사이의 간격을 없애준다. */
+	}
+	
+	th {
+		background-color: #ccc;
+		width: 200px;
+		height: 30px;
+	}
+	
+	td.mycenter {
+		text-align: center; /* 가운데정렬 */
+	}
+	
+	td.myright {
+		text-align: right;
+	}
+	
+	th#titleFirst ~ th {
+		background-color: yellow;
+		height: 50px;
+	}
+	/* 
+		선택자1(th#titleFirst) ~ 선택자2(th) 은
+		선택자 1 다음에 오는 모든 형제태그(노드)중에 선택자2 모두를 말한다.
+		
+		th#titleFirst 다음에 오는 모든 th가 선택 대상이다.
+	 */
+	 
+	th#titleFirst ~ th:hover {
+		color: red;
+	}
+	/* 
+	th#titleFirst 다음에 오는 모든 형제태그(노드)중에 모든 th에 
+	마우스 커서를 올리면 글자색이 변하게 한다.
+	 */ 
+	
+	tr#mytr > td:first-child {
+		text-align: left;
+		color: blue;
+	}
+	
+	tr#mytr > td:last-child {
+		text-align: right;
+		color: red;
+	} 
+	
+	td#pants ~ td {
+		background-color: skyblue;
+	}
+	
+	tr#sum > td:first-child > span:first-child + span {
+		background-color: red;
+	}
+	
+	/*
+		선택자 1 + 선택자2은 선택자1 다음에 나오는 모든 형제 태그(노드) 중 첫번쨰 형제태그를 말한다.
+		쉽게말하면 바로 밑 동생을 뜻한다.
+		
+		선택자1 (tr#sum > td:first-child > span:first-child + span) 
+		선택자2 span
+		즉 2번쨰 span에 빨강배경이 적용된다. 
+	*/
+	
+</style>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th rowspan="3" id="titleFirst" >봄 맞이 바겐세일</th> 
+			<!-- rowspan 적용하기 위해서는 <thead> <tbody> <tfoot> 제거해야 한다 -->
+			<th>제품이름과 설명</th>
+			<th>개당 가격</th>
+			<th>박스당 개수</th>
+		</tr>
+
+		<tr id="mytr">
+			<td class="mycenter">블라우스 - 붉은색 실크</td>
+			<td class="myright">20,000원</td>
+			<td class="mycenter">150</td>
+		</tr>
+		
+		<tr>
+			<td class="mycenter" id="pants">바지 - 검은색 원단</td>
+			<td class="myright">4,000원</td>
+			<td class="mycenter">300</td>
+		</tr>
+
+		<tr id="sum">
+			<!-- colspan은 열병합인데 뒤에 숫자는 병합할 열의 개수이다. -->
+			<td colspan="2" class="mycenter">
+				<span>총액 </span>
+				<span>및</span>
+				<span>총 박스 개수 </span>
+			</td>
+			<td class="myright">24,000원</td>
+			<td class="mycenter">450</td>
+		</tr>
+
+	</table>
+
+
+</body>
+</html>
+
