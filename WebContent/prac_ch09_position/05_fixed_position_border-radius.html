@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>position 사용하기(fixed position) 및 border-radius</title>
+
+<style type="text/css">
+  
+	body {
+		border: solid 1px gray;
+		width: 80%;
+		margin: 0 auto; /* 가운데 정렬 */
+	}
+	
+	div#container {
+		border: solid 1px red;
+		width: 80%;
+		margin: 0 auto;
+	}
+	
+	div#other, div#parent {
+		border: solid 2px blue;
+		margin: 10px;
+	}
+	
+	div#parent {
+		width: 50%;
+		background-color: #ffcccc; /* 연레드 */
+	}
+	
+	div#other {
+		background-color: #cce6ff;	/* 연하늘 */
+	}
+	
+	div#divFixed {
+		position: fixed;
+		top: 600px;
+		left: 650px;
+		/* width를 정해주지 않으면 width는 내용물의 크기만큼 잡힌다. */
+	}
+	
+	/*  
+		엘리먼트에 CSS 속성으로 position을 지정하면 여러가지 방법으로 위치를 지정할 수 있다.
+		
+		- 고정위치(Fixed positioning)
+		position:fixed
+		
+		문서를 기준 (웹브라우저 주소창 아래의 top 0px, left 0px 기준)으로 위치가 정해지기 때문에 
+		부모 엘리먼트의 위치와는 무관하다.
+		parent와의 관계는 완전히 사라지기 떄문에 엘리먼트의 크기는 부모 엘리먼트의 크기에 영향을 받지 않는다.
+		width를 정해주지 않으면 width는 내용물의 크기만큼 잡힌다.
+		중요한 것은 스크롤의 영향을 받지 않는다는 것이다
+		me는 절대위치와 동일한 성격을 갖지만, 화면을 스크롤해도 고정된 위치에 위치한다.
+	*/
+	a {
+		text-decoration: none;
+	}
+	
+	a:link, a:active, a:visited {
+		color: #ccc;
+	}
+	
+	/*  
+		a:link		: 방문 전 링크 상태
+		a:active	: 클릭 했을떄 링크 상태
+		a:visited	: 방문 후 링크 상태
+		a:hover		: 마우스 오버했을 떄 링크 상태
+	*/
+	
+	/*
+		vertical-align 속성 적용 가능 한 경우
+		1. table 내
+		2. inline 엘리먼트 : text, img, input 
+			(여러 inline 엘리먼트 안에서 세로로 가운데 정렬이 되는 것, div 안에서의 가운데 정렬 X)  
+	*/
+	/*
+		div에 세로 정렬을 시키려면 외곽 div의 display를 table로 하고,
+		soqn display를 table-cell로 지정 해주면 된다.
+	*/
+	
+	div#divTbl {
+		display: table;
+	}
+	
+	div#divTblCell {
+		display: table-cell;
+		width: 80px;
+		height: 80px;
+		/* border: solid 1px red; */
+		background-color: navy;
+		text-align: center;
+		vertical-align: middle;
+		border-radius: 50%;
+	}
+	/*  
+		border-radius 는 테두리를 둥글게 만드는 속성이다.
+		border-radius: top-left-x top-right-x bottom-right-x bottom-left-x / top-left-y top-right-y bottom-right-y bottom-left-y
+		border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+		
+		대각선 방향으로 값이 같을 경우엔 아래처럼 사용할 수 있다.
+		border-radius: aa bb aa bb / cc dd cc dd;
+		border-radius: aa bb / cc dd;
+	*/
+	
+	/* === 이미지 깎는 법 === */
+
+	div#divFace td {
+		/* border: solid 2px yellow; */
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	div#divFace td {
+		/* border: solid 2px yellow; */
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	div#divFace td > img {
+		/* border: solid 1px red; */
+		border-radius: 50%;
+	}
+
+</style>
+</head>
+<body>
+  <div id="container">	
+    
+	  <div id="parent">
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	       parent(부모)<br/>
+	  </div>
+	  
+	  <div id="other">
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>	 
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+	       other(기타 다른 것들)<br/>
+     
+	  </div>
+	  
+	  <div id="divFixed">
+	  	<div id="divTbl">
+	  		<div id="divTblCell">
+	  			<a href="#divFace">사진으로</a>
+	  			<!-- href="#" # 뒤에 id값을 써준다. id를 쓰지 않은 경우 맨 꼭대기로 간다. -->
+	  		</div>
+	  	</div>
+	  </div>	
+	  
+	  <div id="divFace" align="center">
+	  <!-- div로 감싸주고 align="center"를 주면 가운데 정렬된다. -->
+	  	<table>
+	  		<tr>
+	  			<td><img src="images/parkby.jpg" /></td>
+	  			<td><img src="images/kimth.jpg" /></td>
+	  			<td><img src="images/iyou.jpg" /></td>
+	  		</tr>
+	  	</table>
+	  
+	  </div>
+	  
+  </div>
+</body>
+</html>
