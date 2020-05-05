@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quiz Main</title>
+<style type="text/css">
+
+	body {
+		font_family: Arial, "MS Trebuchet", sans-serif;
+	}
+
+	div#container {
+		width: 80%;
+		margin: 50px auto;
+	}
+
+	form {
+		/* border: solid 1px red; */
+		float: left;
+		line-height: 35px;
+		width: 25%;
+	}
+	
+	form > ul, nav > ul {
+		/* border: solid 1px blue; */
+		list-style-type: none;
+		padding: 0;
+	}
+	
+	nav > ul {
+		padding-left: 80px;
+		font-size: 20px;
+		font-weight: bolder;
+	}
+	
+	label {
+		display: inline-block;
+		width: 80px;
+	}
+	
+	.btnAll {
+		padding-left: 85px;
+	}
+	
+	img {
+		width: 200px;
+		height: 100px;
+		padding-top: 10px;
+		float: left;
+	}
+	
+	section#sidebar {
+		/* border: solid 1px green; */
+		clear: both;
+		float: left;
+		background-color: #a6a6a6;
+		color: white;
+		width: 25%;
+		height: 450px;
+	}
+	
+	ul#sidebarLi {
+		line-height: 50px;
+		
+	}
+	
+	section#post {
+		/* border: solid 1px yellow; */
+		float: right;
+		background-color: #333333;
+		color:#ffffe6;
+		width: 73%;
+		height: 450px;	
+	}
+	
+	article > p {
+		/* padding-top: 20px; */
+		padding-left: 20px;
+	}
+	
+	p {
+		font-size: 17px;
+	}
+	
+	p.phead {
+		font-size: 24px;
+	}
+	
+	footer {
+		background-color: #d9d9d9;
+		clear: both;
+		height: 80px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	table {
+		height: 80px;
+		width: 100%;	
+	} 
+	
+	.copy {
+		color: black;
+	}
+
+</style>
+
+</head>
+<body>
+
+<div id="container">
+<!-- --------------------------------------------------------------------- -->
+
+	<header>
+		<form name="login">
+			<ul>
+				<li>
+					<label for="userid">아이디</label>
+					<input type="text" id="userid" placeholder="아이디" />
+				</li>
+				
+				<li>
+					<label for="passwd">비밀번호</label>
+					<input type="password" id="passwd" placeholder="비밀번호" />
+				</li>
+				
+				<li class="btnAll">
+					<input type="button" value="로그인" class="btn"/>
+					<input type="button" value="취소" class="btn"/>
+				</li>
+			</ul>
+		</form>
+		
+		<img src="images/20170315064553027.png" />
+		
+	</header>
+	
+<!-- --------------------------------------------------------------------- -->
+	
+	<section id="sidebar">
+		<nav>
+			<ul id="sidebarLi">
+				<li><a>카페</a></li>
+				<li><a>메일</a></li>
+				<li><a>뉴스</a></li>
+				<li><a>지도</a></li>
+				<li><a>증권</a></li>
+				<li><a>블로그</a></li>
+			</ul>
+		</nav>
+	</section>
+	
+<!-- --------------------------------------------------------------------- -->
+	
+	<section id="post">
+		<article>
+			<p class="phead">기사1 제목입력</p>
+			<p>&quot;부동산 거래 동맥경화 우려.. 금리인하 검토시기 왔다&quot;</p>
+			<p class="phead">기사2 제목입력</p>
+			<p>&quot;예매창 지붕 뚫었다&quot;.. &#039;어벤져스:엔드게임&#039; 4DX, 예매 오픈 후 순삭&#039;매진&#039;[공식입장]</p>
+		</article>
+	</section>
+
+<!-- --------------------------------------------------------------------- -->
+	
+	<div id="footer_tbl" align="center">
+		<footer>
+			<table>
+				<tr>	
+					<td class="copy"><p><marquee scrollamount=100 scrolldelay=1000>Copyright &copy; Kakao Corp. All rights reserved.</marquee></p></td>
+				</tr>
+			</table>
+		</footer>
+		</div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
