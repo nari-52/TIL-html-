@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exam3</title>
+</head>
+<body>
+<fieldset>
+	<form method ="get" action="result.html">
+		<p>회원여부 : 
+		<input type="radio" name="member" value="yes" checked> 회원
+		<input type="radio" name="member" value="no"> 비회원 <br>
+		
+		<p>취미(중복선택) :
+		<input type="radio" name="read"/> 독서
+		<input type="radio" name="movie"/>영화
+		<input type="radio" name="music"/>음악
+		<input type="radio" name="sports"/>스포츠
+		</p>
+		
+		<p>직업:
+			<select name="job" size="4" multiple>
+				<option value="student" selected>학생</option>
+				<option value="company">회사원</option>
+				<option value="teacher">교사</option>
+				<option value="sales">자영업</option>
+				<option value="others">기타</option>
+			</select>
+		</p>
+		
+		<p> 남기고 싶은 말 : <br>
+			<textarea name="message" rows="5" cols="70" placeholder="150자 내외로 글을 남겨주세요."></textarea>
+		</p>
+		
+		<p>
+			<input type="reset" value="초기화" />
+			<input type="submit" value="전송"/>
+		
+	</form>
+</fieldset>
+
+</body>
+</html>

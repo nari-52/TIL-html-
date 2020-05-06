@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exam1</title>
+
+<style type="text/css">
+
+	div#container {
+		border: solid 3px black;
+		padding: 0;
+		padding-bottom: 280px;
+	}
+	
+	div#img {
+		width: 60%
+	}
+	
+	img {
+		float: left;
+	}
+	
+	form {
+		width: 30%;
+		float: right;
+	}
+	
+	fieldset {
+		border: 0; 
+		float: right;
+	}
+	
+	fieldset > ul {
+		list-style-type: none;
+		padding: 0;
+		line-height: 30px;
+	}
+	
+	label {
+		display: inline-block;
+		width: 70px;
+	}
+
+	nav {
+		clear: both;
+	}
+	
+	nav > ul {
+		list-style-type: none;
+	}
+	
+	nav > ul > li {
+		display: inline-block;
+		margin: auto 5%;
+	}
+	
+	a {
+		text-decoration: none;
+		color: blue;
+	}
+	
+	section {
+		width: 100%;
+		height: 400px;
+		background-color: #808080;
+	}
+	
+	footer {
+		background-color: #ccc;
+		width:100%;
+		height: 50px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	table {
+		width:100%;
+		height: 50px;
+	}
+</style>
+
+</head>
+<body>
+
+<div id="container">
+	
+	<header>
+		<div id="img">
+			<img src="images/khlogo.jpg" width="100px" height="100px"/>
+		</div>
+		<form name="login" action="login.do">
+		<fieldset>
+			<ul>
+				<li>
+					<label>아이디</label>
+					<input type="text" id="userid"/>
+				</li>
+				<li>
+					<label>패스워드</label>
+					<input type="password" id="passwd"/>
+				</li>
+				<li>
+					<input type="button" value="로그인"/>
+					<input type="button" value="취소"/>
+				</li>
+			</ul>	
+		</fieldset>
+		</form>
+	
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a href="http://localhost:9090/HTML5/Exam/exam1.html">메인</a></li>
+			<li><a href="http://localhost:9090/HTML5/Exam/exam1.html">공지사항</a></li>
+			<li><a href="http://localhost:9090/HTML5/Exam/exam1.html">자유게시판</a></li>
+			<li><a href="http://localhost:9090/HTML5/Exam/exam1.html">갤러리</a></li>
+			<li><a href="http://localhost:9090/HTML5/Exam/exam1.html">회원관리</a></li>
+			<li><a href="http://localhost:9090/HTML5/Exam/exam1.html">채팅하기</a></li>
+		</ul>
+	</nav>
+	
+	<section>
+		<div id="contents">
+		</div>
+	</section>
+
+	<div id="tbl_footer">
+		<footer>
+			<table>
+				<tr>
+					<td class="tbl_td" align="center">Copyright &copy; 1998-2019 KH Information Educational Institute All Right Reserved </td>
+				</tr>
+			</table>
+		</footer>
+	</div>
+
+</div>
+
+</body>
+</html>
